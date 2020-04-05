@@ -11,7 +11,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // setContentView: 画面サイズにあったレイアウトを読み込む
         setContentView(R.layout.activity_main);
+        View mainView = findViewById(R.id.edit_message);
+        // 2ペインレイアウト判定(20200405時点未使用。2ペインレイアウト処理時に使用)
+        IsDualPane = mainView != null && mainView.getVisibility() == View.VISIBLE;
     }
 
     public void sendMessage(View view) {
